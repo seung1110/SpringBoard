@@ -7,4 +7,16 @@
 	<select id="getBoard" resultType="org.psy.domain.BoardVO">
 		select * from Board where bno = #{bno}
 	</select>
+	
+	<insert id="insertBoard">
+		insert into Board (bno,title,content,writer) values(seq_board.nextval,#{title},#{content},#{writer})
+	</insert>
+	
+	<delete id="deletBoard">
+		delete from Board where bno = #{bno}
+	</delete>
+	
+	<update id="updateBoard">
+		update Board set title=#{title}, content=#{content},updatedate= sysdate where bno = #{bno}
+	</update>
 </mapper>
