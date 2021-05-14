@@ -14,7 +14,7 @@ import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration
 @MapperScan(basePackages={"org.psy.mapper"}) // mybatis mapper
-@ComponentScan(basePackages={"org.psy.domain"})
+@ComponentScan(basePackages={"org.psy.domain", "org.psy.service"})
 public class RootConfig {
 	
 	@Bean
