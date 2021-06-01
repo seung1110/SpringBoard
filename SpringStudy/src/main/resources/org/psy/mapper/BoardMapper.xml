@@ -21,7 +21,7 @@
 	</update>
 	
 	<select id="getBoardList" resultType="org.psy.domain.BoardVO">
-		select * from board
+		select * from board order by bno desc
 	</select>
 	
 </mapper>
