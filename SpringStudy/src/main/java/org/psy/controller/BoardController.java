@@ -42,5 +42,9 @@ public class BoardController {
 		return "redirect:list";
 	}
 	
-
+	@GetMapping(value="/list/detail")
+	public String detailBoard(@RequestParam("bno")int bno, Model model){
+		model.addAttribute("board",service.get(bno));
+		return "board";
+	}
 }
