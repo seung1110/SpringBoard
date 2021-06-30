@@ -27,16 +27,14 @@
 	$(function(){
 		// tr 클릭 시 페이지 이동 설정
 		$("tbody tr").on("click",function(){
-			window.location.href="/board/bno="+$(this).find("td").html();
+			window.location.href="/board/list/detail?bno="+$(this).find("td").html();
 		})
 		
 		$("#newBtn").on("click",function(){
 			window.location.href="/board/insert";
 		});
 		
-		$("td.regDate").each(function(){
-			console.log($(this).html());
-		})
+
 	});
 </script>
 </head>

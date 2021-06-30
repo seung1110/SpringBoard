@@ -14,9 +14,23 @@
 	crossorigin="anonymous">
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>
+	<!-- jqeury -->
+<script
+	src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
 <title>Insert title here</title>
 <script type="text/javascript">
-	
+	$(function(){
+		
+		$("button.list").on("click",function(){
+			window.location.href="/board/list";
+		});
+		
+		$("button.update").on("click",function(){
+			var location = window.location.href;
+			location = location.split("bno=");
+			window.location.href="/board/modify?bno="+location[1];
+		});
+	});
 </script>
 <style type="text/css">
 	div.board{
@@ -38,7 +52,8 @@
 </head>
 <body>
 <div class="board">
-	<c:if test="${board != null}">
+	<c:if test="${board != null}"> 
+	<!-- jstl을 사용해 값이 있을 때만 출력 -->
 			<table class="table">
 				<thead>
 					<tr>
@@ -56,12 +71,12 @@
 						<td>
 							<button class="btn btn-secondary list">목록</button>
 							<button class="btn btn-primary update">수정</button>
-							<button class="btn btn-danger delete">삭제</button>
 						</td>
 					</tr>
 				</tbody>
 			</table>
 		</c:if>
+		
 </div>
 </body>
 </html>
